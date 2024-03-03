@@ -9,7 +9,7 @@ app = QApplication(sys.argv)
 
 win = QDialog()
 win.setWindowTitle('LOL')
-win.setGeometry(801,200,500,500)
+win.setGeometry(800,200,500,500)
 
 len = QLineEdit('Defolt text',win)
 len.move(180,190)
