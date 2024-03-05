@@ -21,6 +21,3 @@ btn.clicked.connect(evt_btn_cliced)
 
 win.show()
 sys.exit(app.exec_())
-
-3464357458569867960
-5475685696070
