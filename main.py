@@ -21,3 +21,6 @@ btn.clicked.connect(evt_btn_cliced)
 
 win.show()
 sys.exit(app.exec_())
+
+win.show()
+sys.exit(app.exec_())
