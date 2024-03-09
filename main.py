@@ -1,23 +1,21 @@
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import*
-import sys
+from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QVBoxLayout,QPushButton
 
-def evt_btn_cliced():
-    win.setWindowTitle(len.text())
+app = QApplication([])
+win = QWidget()
 
-app = QApplication(sys.argv)
+win.setWindowTitle('Перша програма')
+win.resize(500,500)
+win.move(700,250)
 
-win = QDialog()
-win.setWindowTitle('LOL')
-win.setGeometry(801,200,500,500)
+winer = QLabel('s')
 
-len = QLineEdit('Defolt text',win)
-len.move(180,190)
+len = QVBoxLayout()
+len.addWidget(winer, alignment=Qt.AlignCenter)
 
-btn = QPushButton('Ubdate Window Title',win)
-btn.move(170,240)
-btn.resize(150,50)
-btn.clicked.connect(evt_btn_cliced)
+
+
+
 
 win.show()
-sys.exit(app.exec_())
+app.exec_()
