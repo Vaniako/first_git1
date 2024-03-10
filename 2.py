@@ -1,23 +1,25 @@
-class Title():
-    def __init__(self,x,y,title):
-        self.x = x
-        self.y = y
-        self.title = title
-        self.appearance = True
-    def higth(self):
-        self.appearance = False
-    def shov(self):
-        self.appearance = True
-    def prent(self):
-        print('Кнопка:',self.title)
-        print('Розташування:',self.x,self.y)
-        if self.appearance:
-            print('Видимість:',self.appearance)
-        elif self.appearance == False:
-            print('Видимість:',self.appearance)
-            print(self.title,'- приховано')
-a = Title(150,50,'Дізнайтесь переможця прямо зараз!')
-a.prent()
-b = Title(150,-100,'Переможець може бути тільки один')
-b.higth()
-b.prent()
+from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import QApplication, QWidget, QLabel,QVBoxLayout,QPushButton
+from random import randint
+def winers():
+    a = randint(1,100)
+    winer.setText(str(a))
+    text.setText('Переможець:')
+app = QApplication([])
+win = QWidget()
+text = QLabel('Натисни щоб дізнатися переможця')
+v1 = QVBoxLayout()
+buttn = QPushButton('Згенеруіати')
+winer = QLabel('?')
+win.resize(500,300)
+win.setWindowTitle('Визначник переможця')
+
+v1.addWidget(text, alignment =Qt.AlignCenter)
+v1.addWidget(winer, alignment=Qt.AlignCenter)
+v1.addWidget(buttn, alignment=Qt.AlignCenter)
+buttn.clicked.connect(winers)
+win.setLayout(v1)
+
+
+win.show()
+app.exec_()
