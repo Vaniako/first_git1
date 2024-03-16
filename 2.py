@@ -50,7 +50,7 @@ r_bt_4.clicked.connect(show_lose)
 r_bt_5.clicked.connect(show_lose)
 r_bt_6.clicked.connect(show_lose)
 
-win.setLayout(v_main)
+win.setLayout(v_main) 
 
 win.show()
 app.exec_()
