@@ -21,10 +21,11 @@ class Qwestion():
 
 
 
+
 app = QApplication([])
 import main_window as wind
 import menu_window as manu_w
-# Set answet
+# Set answer
 def ans():
     global chose
     chose = choice(qwestions)
