@@ -46,10 +46,10 @@ def show_result():
 
         wind.butn_Ok.setText('Наступне запитання')
     else :
-        ans()
         wind.butn_Ok.setText('Відповісти')
         wind.rb_Group.show()
         wind.ans_Group.hide()
+        ans()
         
         wind.rb_Button_Group.setExclusive(False)
         for rb in rbs:
@@ -60,14 +60,17 @@ def check_result():
     k_down = 3
     for i in rbs:
         if i.isChecked():
-            if i.text() == qwestions[0].answer:
+            if i.text() == chose.answer:
                 k_down = 1
             else:
                 k_down = 0
+
     if k_down == 1:
         wind.lb_result.setText('Вірно')
     elif k_down == 0:
         wind.lb_result.setText('Не вірно')
+    elif k_down == 3:
+        wind.lb_result.setText('Відповідь не вказана')
 def menu():
     manu_w.window.show()
     wind.win.hide()
@@ -76,16 +79,17 @@ def back():
     manu_w.window.hide()    
 # list qwestions
 q1 = Qwestion('мама','mother','m1','m2','m3')
-
-qwestions = [q1]
+q2 = Qwestion('яблуко','aple','a1','a2','a3')
+q3 = Qwestion('привіт','hi','h1','h2','h3')
+qwestions = [q1,q2,q3]
 
 
 
 rbs = [wind.rb_1,wind.rb_2,wind.rb_3,wind.rb_4]
 
 ans()
-wind.butn_Ok.clicked.connect(check_result)
 wind.butn_Ok.clicked.connect(show_result)
+wind.butn_Ok.clicked.connect(check_result)
 wind.butn_manu.clicked.connect(menu)
 manu_w.btn_back.clicked.connect(back)
 wind.win.show()
